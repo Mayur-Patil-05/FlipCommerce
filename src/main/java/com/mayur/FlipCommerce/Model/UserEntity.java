@@ -22,6 +22,10 @@ public class UserEntity {
     private LocalDate createdAt;
     private String address;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
+
     @PrePersist
     public void created() {
         this.createdAt = LocalDate.now();

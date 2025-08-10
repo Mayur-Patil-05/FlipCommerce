@@ -1,6 +1,5 @@
-package com.mayur.FlipCommerce.Model;
+package com.mayur.FlipCommerce.DTOs;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,19 +7,13 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cart {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CartDto {
     private Long Id;
     private Integer totalQuantity;
     private Integer totalPrice;
     private LocalDate createdAt;
-
-    @OneToOne(mappedBy = "cart")
-    private UserEntity userEntity;
 }
